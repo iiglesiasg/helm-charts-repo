@@ -1,0 +1,42 @@
+apiVersion: v1
+items:
+- apiVersion: kibana.k8s.elastic.co/v1
+  kind: Kibana
+  metadata:
+    annotations:
+      association.k8s.elastic.co/es-conf: '{"authSecretName":"quickstart-kibana-user","authSecretKey":"default-quickstart-kibana-user","caCertProvided":true,"caSecretName":"quickstart-kb-es-ca","url":"https://quickstart-es-http.default.svc:9200"}'
+      common.k8s.elastic.co/controller-version: 1.0.1
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kibana.k8s.elastic.co/v1","kind":"Kibana","metadata":{"annotations":{},"name":"quickstart","namespace":"default"},"spec":{"count":1,"elasticsearchRef":{"name":"quickstart"},"version":"7.6.2"}}
+    creationTimestamp: "2020-04-22T16:12:41Z"
+    generation: 2
+    name: quickstart
+    namespace: default
+    resourceVersion: "11388895"
+    selfLink: /apis/kibana.k8s.elastic.co/v1/namespaces/default/kibanas/quickstart
+    uid: e0833bd5-99a4-4b03-8af9-b8c0b3fa867a
+  spec:
+    count: 1
+    elasticsearchRef:
+      name: quickstart
+    http:
+      service:
+        metadata:
+          creationTimestamp: null
+        spec: {}
+      tls:
+        certificate: {}
+    podTemplate:
+      metadata:
+        creationTimestamp: null
+      spec:
+        containers: null
+    version: 7.6.2
+  status:
+    associationStatus: Established
+    availableNodes: 1
+    health: green
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

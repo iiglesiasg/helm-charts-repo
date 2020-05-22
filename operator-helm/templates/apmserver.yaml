@@ -1,0 +1,54 @@
+apiVersion: v1
+items:
+- apiVersion: apm.k8s.elastic.co/v1
+  kind: ApmServer
+  metadata:
+    name: apm-server-quickstart
+  spec:
+    config:
+      apm-server:
+        kibana:
+          enabled: true
+          host: quickstart-kb-http
+          password: ${ES_PASSWORD}
+          protocol: https
+          ssl.certificate_authorities:
+          - /usr/share/apm-server/config/kibana-certs/ca.crt
+          username: elastic
+    count: 1
+    elasticsearchRef:
+      name: quickstart
+    http:
+      service:
+        metadata:
+          creationTimestamp: null
+        spec: {}
+      tls:
+        certificate: {}
+    podTemplate:
+      metadata:
+        creationTimestamp: null
+      spec:
+        containers:
+        - env:
+          - name: ES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: elastic
+                name: quickstart-es-elastic-user
+          name: apm-server
+          volumeMounts:
+          - mountPath: /usr/share/apm-server/config/kibana-certs
+            name: kibana-certs
+            readOnly: true
+        volumes:
+        - name: kibana-certs
+          secret:
+            defaultMode: 420
+            optional: false
+            secretName: quickstart-kb-http-certs-public
+    version: 7.6.2
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

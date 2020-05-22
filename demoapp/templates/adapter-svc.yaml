@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: adapter-helm
+  name: adapter-helm
+  namespace: default
+spec:
+  selector:
+    app: adapter-helm
+  ports:
+    - port: 8090
+      protocol: TCP
+      targetPort: 8090
+  sessionAffinity: None
+  type: ClusterIP
