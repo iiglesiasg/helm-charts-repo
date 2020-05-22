@@ -53,7 +53,12 @@ spec:
           value: "false"
         - name: ELASTIC_APM_ENABLE_LOG_CORRELATION
           value: "true"
-        image: aomregweu1poc001.azurecr.io/adapter-azure:1.0.1-AZURE-inigo
+        - name: MONGO_PASS
+          valueFrom:
+            secretKeyRef:
+              key: mongodb-root-password
+              name: bilbo-mongo-mongodb          
+        image: iiglesias/core
         imagePullPolicy: Always
         name: core-helm
         ports:
