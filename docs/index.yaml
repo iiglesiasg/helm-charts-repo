@@ -3,9 +3,9 @@ entries:
   demoapp:
   - apiVersion: v1
     appVersion: 1.0.1-ELASTIC
-    created: "2020-05-25T10:45:08.9761925+02:00"
+    created: "2020-05-25T14:04:25.338844+02:00"
     description: Chart for deploying ITX monitoring demo app
-    digest: 019769099aa2a6050ebdfcb651a423ee8316a06842fd8dcc538d08355b41c226
+    digest: e00d0980e6598d1de23d01f87642162f9fe0e6fcc9718dd807b614df575a9448
     name: demoapp
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/demoapp-0.2.0-ITX.tgz
@@ -13,11 +13,11 @@ entries:
   elk-operator:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2020-05-25T10:45:08.9840349+02:00"
+    created: "2020-05-25T14:04:25.3469086+02:00"
     description: A Helm chart for deploying custom elastic operator
-    digest: 3b5dcec8c65db115472511d6b9068d482850159b76ef7c30be3c3cb14a76387d
+    digest: 25556f3a1a75011c5bcc300546056639c4078862b325bba0828381de25a484e9
     name: elk-operator
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/elk-operator-0.3.0-ITX.tgz
     version: 0.3.0-ITX
-generated: "2020-05-25T10:45:08.9685779+02:00"
+generated: "2020-05-25T14:04:25.3324326+02:00"
