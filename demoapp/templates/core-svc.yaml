@@ -12,8 +12,7 @@ spec:
     - port: 8070
       protocol: TCP
       targetPort: 8070
-    - name: grpc
-      port: 6569
+    - port: 6569
       protocol: TCP
       targetPort: 6569
   sessionAffinity: None
