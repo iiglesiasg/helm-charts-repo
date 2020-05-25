@@ -1,0 +1,7 @@
+nodeSets:
+  master: 
+    count: 1
+    storage: 1Gi
+  data: 
+    count: 2
+    storage: 20Gi
