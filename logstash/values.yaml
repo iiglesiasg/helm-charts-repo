@@ -90,7 +90,7 @@ labels:
   app: logstash
   chart: logstash-0.1.5
   heritage: Helm
-  release: bilbao
+  release: bilbao-logstash
 
 
 logstashJavaOpts: "-Xmx1g -Xms1g"

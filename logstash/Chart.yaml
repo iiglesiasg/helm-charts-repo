@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: v1
 description: Official Elastic helm chart for Logstash
 home: https://github.com/elastic/helm-charts
 maintainers:
