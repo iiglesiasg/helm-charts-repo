@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     k8s-app: core-helm
-  name: core-helm
+  name: monitoringcore
   namespace: default
 spec:
   selector:
@@ -12,8 +12,10 @@ spec:
     - port: 8070
       protocol: TCP
       targetPort: 8070
+      name: rest
     - port: 6569
       protocol: TCP
       targetPort: 6569
+      name: grpc
   sessionAffinity: None
   type: ClusterIP

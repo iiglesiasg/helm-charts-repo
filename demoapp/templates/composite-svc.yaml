@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     k8s-app: composite-helm
-  name: composite-helm
+  name: monitoringcomposite
   namespace: default
 spec:
   selector:
@@ -12,8 +12,10 @@ spec:
     - port: 8080
       protocol: TCP
       targetPort: 8080
+      name: rest
     - port: 6568
       protocol: TCP
       targetPort: 6568
+      name: grpc
   sessionAffinity: None
   type: ClusterIP
