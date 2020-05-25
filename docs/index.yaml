@@ -3,7 +3,7 @@ entries:
   demoapp:
   - apiVersion: v1
     appVersion: 1.0.1-ELASTIC
-    created: "2020-05-25T16:11:52.860272+02:00"
+    created: "2020-05-25T16:54:45.186882+02:00"
     description: Chart for deploying ITX monitoring demo app
     digest: 033cd35b61fb4537d9064c5efd5291467efcd6647ca77ddf1bfee288b0191b3a
     name: demoapp
@@ -13,7 +13,7 @@ entries:
   elk-operator:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2020-05-25T16:11:52.861187+02:00"
+    created: "2020-05-25T16:54:45.187617+02:00"
     description: A Helm chart for deploying custom elastic operator
     digest: 25556f3a1a75011c5bcc300546056639c4078862b325bba0828381de25a484e9
     name: elk-operator
@@ -21,11 +21,11 @@ entries:
     - https://iiglesiasg.github.io/helm-charts-repo/elk-operator-0.3.0-ITX.tgz
     version: 0.3.0-ITX
   logstash:
-  - apiVersion: v2
+  - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-05-25T16:11:52.862919+02:00"
+    created: "2020-05-25T16:54:45.190419+02:00"
     description: Official Elastic helm chart for Logstash
-    digest: 7e81d108d1dc6096c91d7bea9168288dd640e9de537e19637f377a1b673bd5ef
+    digest: 7a797ea52b9441a59139fd440eff13c19ab04298d7ee7880400f2a0ab6322dff
     home: https://github.com/elastic/helm-charts
     icon: https://helm.elastic.co/icons/logstash.png
     maintainers:
@@ -37,4 +37,4 @@ entries:
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/logstash-0.2.0-ITX.tgz
     version: 0.2.0-ITX
-generated: "2020-05-25T16:11:52.85694+02:00"
+generated: "2020-05-25T16:54:45.185575+02:00"
