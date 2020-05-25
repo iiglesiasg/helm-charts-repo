@@ -30,35 +30,35 @@ logstashPipeline: {}
 # This will be appended to the current 'env:' key. You can use any of the kubernetes env
 # syntax here
 extraEnvs: 
-        - name: HTTP_HOST
-          value: 0.0.0.0
-        - name: HTTP_PORT
-          value: "9600"
-        - name: ELASTICSEARCH_HOST
-          value: https://quickstart-es-http
-        - name: ELASTICSEARCH_PORT
-          value: "9200"
-        - name: ELASTICSEARCH_PASS
-          valueFrom:
-            secretKeyRef:
-              key: elastic
-              name: quickstart-es-elastic-user
-        - name: LS_JAVA_OPTS
-          value: -Xmx1g -Xms1g
-        - name: CONFIG_RELOAD_AUTOMATIC
-          value: "true"
-        - name: PATH_CONFIG
-          value: /usr/share/logstash/pipeline
-        - name: PATH_DATA
-          value: /usr/share/logstash/data
-        - name: QUEUE_CHECKPOINT_WRITES
-          value: "1"
-        - name: QUEUE_DRAIN
-          value: "true"
-        - name: QUEUE_MAX_BYTES
-          value: 1gb
-        - name: QUEUE_TYPE
-          value: persisted
+  - name: HTTP_HOST
+    value: 0.0.0.0
+  - name: HTTP_PORT
+    value: "9600"
+  - name: ELASTICSEARCH_HOST
+    value: https://quickstart-es-http
+  - name: ELASTICSEARCH_PORT
+    value: "9200"
+  - name: ELASTICSEARCH_PASS
+    valueFrom:
+      secretKeyRef:
+        key: elastic
+        name: quickstart-es-elastic-user
+  - name: LS_JAVA_OPTS
+    value: -Xmx1g -Xms1g
+  - name: CONFIG_RELOAD_AUTOMATIC
+    value: "true"
+  - name: PATH_CONFIG
+    value: /usr/share/logstash/pipeline
+  - name: PATH_DATA
+    value: /usr/share/logstash/data
+  - name: QUEUE_CHECKPOINT_WRITES
+    value: "1"
+  - name: QUEUE_DRAIN
+    value: "true"
+  - name: QUEUE_MAX_BYTES
+    value: 1gb
+  - name: QUEUE_TYPE
+    value: persisted
 
 
 # Allows you to load environment variables from kubernetes secret or config map
@@ -135,27 +135,16 @@ persistence:
   enabled: false
   annotations: {}
 
-extraVolumes: ""
+extraVolumes: |
   - name: elasticsearch-certs
     secret:
       defaultMode: 420
       optional: false
       secretName: quickstart-es-http-certs-public
 
-extraVolumeMounts: 
-  # - name: extras
-  #   mountPath: /usr/share/extras
-  #   readOnly: true
-  #- mountPath: /usr/share/logstash/data
-  #  name: data
-  #- mountPath: /usr/share/logstash/patterns
-  #  name: patterns
-  #- mountPath: /usr/share/logstash/files
-  #  name: files
-  #- mountPath: /usr/share/logstash/pipeline
-  #  name: pipeline
-  - mountPath: /usr/share/logstash/config/elasticsearch-certs
-    name: elasticsearch-certs
+extraVolumeMounts: |
+  - name: elasticsearch-certs
+    mountPath: /usr/share/logstash/config/elasticsearch-certs
     readOnly: true
 
 extraContainers: ""
