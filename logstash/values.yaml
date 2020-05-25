@@ -86,12 +86,7 @@ imagePullSecrets: []
 podAnnotations: {}
 
 # additionals labels
-labels: 
-  app: logstash
-  chart: logstash-0.1.5
-  heritage: Helm
-  release: bilbao-logstash
-
+labels: {}
 
 logstashJavaOpts: "-Xmx1g -Xms1g"
 
