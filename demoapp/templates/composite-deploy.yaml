@@ -51,6 +51,11 @@ spec:
           value: "false"
         - name: ELASTIC_APM_ENABLE_LOG_CORRELATION
           value: "true"
+        - name: ELASTIC_PASS
+          valueFrom:
+            secretKeyRef:
+              key: elastic
+              name: quickstart-es-elastic-user          
         image: iiglesias/composite
         imagePullPolicy: Always
         name: composite-helm

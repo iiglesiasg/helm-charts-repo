@@ -57,7 +57,12 @@ spec:
           valueFrom:
             secretKeyRef:
               key: mongodb-root-password
-              name: bilbo-mongo-mongodb          
+              name: bilbo-mongo-mongodb      
+        - name: ELASTIC_PASS
+          valueFrom:
+            secretKeyRef:
+              key: elastic
+              name: quickstart-es-elastic-user                  
         image: iiglesias/core
         imagePullPolicy: Always
         name: core-helm
