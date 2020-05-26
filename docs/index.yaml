@@ -3,7 +3,7 @@ entries:
   demoapp:
   - apiVersion: v1
     appVersion: 1.0.1-ELASTIC
-    created: "2020-05-26T11:53:07.363444+02:00"
+    created: "2020-05-26T13:40:52.1814028+02:00"
     description: Chart for deploying ITX monitoring demo app
     digest: 033cd35b61fb4537d9064c5efd5291467efcd6647ca77ddf1bfee288b0191b3a
     name: demoapp
@@ -13,7 +13,7 @@ entries:
   elk-operator:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2020-05-26T11:53:07.364052+02:00"
+    created: "2020-05-26T13:40:52.1879239+02:00"
     description: A Helm chart for deploying custom elastic operator
     digest: 25556f3a1a75011c5bcc300546056639c4078862b325bba0828381de25a484e9
     name: elk-operator
@@ -23,7 +23,7 @@ entries:
   logstash:
   - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-05-26T11:53:07.365422+02:00"
+    created: "2020-05-26T13:40:52.197176+02:00"
     description: Official Elastic helm chart for Logstash
     digest: aeb30a40e2a255890a240fc700356b007a2dfb41e02f19adf5cd2f089cf89c01
     home: https://github.com/elastic/helm-charts
@@ -37,4 +37,21 @@ entries:
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/logstash-0.2.0-ITX.tgz
     version: 0.2.0-ITX
-generated: "2020-05-26T11:53:07.361582+02:00"
+  metricbeat:
+  - apiVersion: v1
+    appVersion: 7.7.0
+    created: "2020-05-26T13:40:52.2043669+02:00"
+    description: Official Elastic helm chart for Metricbeat
+    digest: f24fdddf06663be77e1409b023a267632632099a4f6d223ceb3efa13b002655e
+    home: https://github.com/elastic/helm-charts
+    icon: https://helm.elastic.co/icons/beats.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: metricbeat
+    sources:
+    - https://github.com/elastic/beats
+    urls:
+    - https://iiglesiasg.github.io/helm-charts-repo/metricbeat-0.2.0-ITX.tgz
+    version: 0.2.0-ITX
+generated: "2020-05-26T13:40:52.1731677+02:00"
