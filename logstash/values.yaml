@@ -107,13 +107,6 @@ envFrom:
 # - configMapRef:
 #     name: config-map
 
-  - secretRef:
-      name: quickstart-es-http-certs-public
-  - configMapRef:
-      name: logstash-helm-patterns
-  - configMapRef:
-      name: logstash-helm-files
-
 # A list of secrets and their paths to mount inside the pod
 secretMounts: []
 
