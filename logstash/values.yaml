@@ -15,7 +15,46 @@ logstashConfig: {}
 
 # Allows you to add any pipeline files in /usr/share/logstash/pipeline/
 ### ***warn*** there is a hardcoded logstash.conf in the image, override it first
-logstashPipeline: {}
+logstashPipeline: 
+  input_main.conf: |-
+    input {
+      # udp {
+      #   port => 1514
+      #   type => syslog
+      # }
+      tcp {
+          port => 9800
+          #type => syslog
+          codec => json
+      }
+      beats {
+        port => 5044
+      }
+      # http {
+      #   port => 8080
+      # }
+      # kafka {
+      #   ## ref: https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html
+      #   bootstrap_servers => "kafka-input:9092"
+      #   codec => json { charset => "UTF-8" }
+      #   consumer_threads => 1
+      #   topics => ["source"]
+      #   type => "example"
+      # }
+    }
+  output_main.conf: | 
+    output {
+      # stdout { codec => rubydebug }
+      elasticsearch
+      {
+        hosts => ["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
+        manage_template => false  
+        index => "logstash-%{+YYYY.MM.dd}"        
+        cacert => "/usr/share/logstash/config/elasticsearch-certs/tls.crt"
+        user => "elastic"
+        password => "${ELASTICSEARCH_PASS}"
+      }
+    }
 #  logstash.conf: |
 #    input {
 #      exec {
