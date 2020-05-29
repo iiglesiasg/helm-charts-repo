@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  body: |
+    {
+        "adapter":{
+                "msg": "adapter",
+                "statusCode": 200,
+                "delayMillis": 0,
+                "encapsulateError" : false
+        },
+        "composite":{
+                "msg": "composite",
+                "statusCode": 200,
+                "delayMillis": 0,
+                "encapsulateError" : false
+        },
+        "core": {
+                "msg": "core",
+                "statusCode": 200,
+                "delayMillis": 0,
+                "encapsulateError" : false
+        }
+    }
+kind: ConfigMap
+metadata:
+  name: body
+  namespace: default

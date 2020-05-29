@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: load-generator
+spec:
+  template:
+    spec:
+      containers:
+      - name: load-generator
+        image: peterevans/vegeta
+        command: [ "/bin/sh", "-c", "echo 'POST http://adapter-helm:8090/MONADTST/testhttp' | vegeta attack -rate=10 -duration=4s -body=BODY -header='Content-Type: application/json'" ]
+        env:
+          - name: BODY
+            valueFrom:
+              configMapKeyRef:
+                key: body
+                name: body
+        volumeMounts:
+        - mountPath: /usr/share/load-generator/body.json
+          name: body
+          readOnly: true
+          subPath: body.json
+      volumes:
+        - name: body
+          configMap:
+            name: body
+      restartPolicy: Never
+  backoffLimit: 4
