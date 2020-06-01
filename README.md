@@ -11,8 +11,6 @@ This Helm chart is a lightweight way to configure and run the following stack:
     - Composite 
     - Core
 
-![Screenshot](images/helm-logo.jpg)
-
 ### Requirements:
 
 - [Helm](https://helm.sh/docs/intro/install/) 
