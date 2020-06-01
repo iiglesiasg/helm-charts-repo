@@ -3,9 +3,9 @@ entries:
   demoapp:
   - apiVersion: v1
     appVersion: 1.0.1-ELASTIC
-    created: "2020-06-01T11:14:24.4039382+02:00"
+    created: "2020-06-01T11:16:57.7235494+02:00"
     description: Chart for deploying ITX monitoring demo app
-    digest: 24110a15702442490aba22a52a22d2440e25e3423528adabef58ac2104efa516
+    digest: 4f3d83ac84705876f272e43bf6c302f1c181c75a0fcbe3db5d8b520fb9193195
     name: demoapp
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/demoapp-0.2.0-ITX.tgz
@@ -13,7 +13,7 @@ entries:
   elk-operator:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2020-06-01T11:14:24.4107486+02:00"
+    created: "2020-06-01T11:16:57.7303182+02:00"
     description: A Helm chart for deploying custom elastic operator
     digest: a969bdbf3e96474366bd23148d0ffb26d2a16949ed3243a533492d647dbd865b
     name: elk-operator
@@ -23,7 +23,7 @@ entries:
   load-generator:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2020-06-01T11:14:24.4158927+02:00"
+    created: "2020-06-01T11:16:57.7355557+02:00"
     description: A Helm chart for Kubernetes
     digest: 05a6932bd14ead552e25add07dc41eaa6cafcbb944eac77619dbf64537e9a4d6
     name: load-generator
@@ -33,7 +33,7 @@ entries:
   logstash:
   - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-06-01T11:14:24.422395+02:00"
+    created: "2020-06-01T11:16:57.741814+02:00"
     description: Official Elastic helm chart for Logstash
     digest: aeb30a40e2a255890a240fc700356b007a2dfb41e02f19adf5cd2f089cf89c01
     home: https://github.com/elastic/helm-charts
@@ -50,7 +50,7 @@ entries:
   metricbeat:
   - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-06-01T11:14:24.4308418+02:00"
+    created: "2020-06-01T11:16:57.7497899+02:00"
     description: Official Elastic helm chart for Metricbeat
     digest: f24fdddf06663be77e1409b023a267632632099a4f6d223ceb3efa13b002655e
     home: https://github.com/elastic/helm-charts
@@ -64,4 +64,4 @@ entries:
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/metricbeat-0.2.0-ITX.tgz
     version: 0.2.0-ITX
-generated: "2020-06-01T11:14:24.3932579+02:00"
+generated: "2020-06-01T11:16:57.7120129+02:00"
