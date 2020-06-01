@@ -11,7 +11,7 @@ data:
         "composite":{
                 "msg": "composite",
                 "statusCode": 200,
-                "delayMillis": 0,
+                "delayMillis": 150,
                 "encapsulateError" : false
         },
         "core": {
