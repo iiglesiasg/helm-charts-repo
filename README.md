@@ -6,7 +6,10 @@ This Helm chart is a lightweight way to configure and run the following stack:
 - APM Server
 - Logstash
 - Metricbeat
-- App Demo: Adapter, Composite and Core micros
+- App Demo microservices
+    - Adapter
+    - Composite 
+    - Core
 
 ### Requirements:
 
