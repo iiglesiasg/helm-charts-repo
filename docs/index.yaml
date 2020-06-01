@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  body:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-06-01T11:05:32.797737+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 8e02d9df2777fbc65d7f626f77d7fe5c5918140f8a971761ce2ac01341152e3c
+    name: body
+    type: application
+    urls:
+    - https://iiglesiasg.github.io/helm-charts-repo/body-0.2.0-ITX.tgz
+    version: 0.2.0-ITX
   demoapp:
   - apiVersion: v1
     appVersion: 1.0.1-ELASTIC
-    created: "2020-06-01T10:56:55.7414823+02:00"
+    created: "2020-06-01T11:05:32.79842+02:00"
     description: Chart for deploying ITX monitoring demo app
     digest: 24110a15702442490aba22a52a22d2440e25e3423528adabef58ac2104efa516
     name: demoapp
@@ -13,7 +24,7 @@ entries:
   elk-operator:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2020-06-01T10:56:55.74764+02:00"
+    created: "2020-06-01T11:05:32.799072+02:00"
     description: A Helm chart for deploying custom elastic operator
     digest: a969bdbf3e96474366bd23148d0ffb26d2a16949ed3243a533492d647dbd865b
     name: elk-operator
@@ -23,7 +34,7 @@ entries:
   load-generator:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2020-06-01T10:56:55.7538699+02:00"
+    created: "2020-06-01T11:05:32.800064+02:00"
     description: A Helm chart for Kubernetes
     digest: de265693d9d7dcf68a19ee202f0f3f0689249a038509fa37b6b1daddae021aa8
     name: load-generator
@@ -33,7 +44,7 @@ entries:
   logstash:
   - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-06-01T10:56:55.7608248+02:00"
+    created: "2020-06-01T11:05:32.802556+02:00"
     description: Official Elastic helm chart for Logstash
     digest: aeb30a40e2a255890a240fc700356b007a2dfb41e02f19adf5cd2f089cf89c01
     home: https://github.com/elastic/helm-charts
@@ -50,7 +61,11 @@ entries:
   metricbeat:
   - apiVersion: v1
     appVersion: 7.7.0
-    created: "2020-06-01T10:56:55.7677522+02:00"
+    created: "2020-06-01T11:05:32.806022+02:00"
+    dependencies:
+    - name: kube-state-metrics
+      repository: '@stable'
+      version: 2.4.1
     description: Official Elastic helm chart for Metricbeat
     digest: f24fdddf06663be77e1409b023a267632632099a4f6d223ceb3efa13b002655e
     home: https://github.com/elastic/helm-charts
@@ -64,4 +79,4 @@ entries:
     urls:
     - https://iiglesiasg.github.io/helm-charts-repo/metricbeat-0.2.0-ITX.tgz
     version: 0.2.0-ITX
-generated: "2020-06-01T10:56:55.73105+02:00"
+generated: "2020-06-01T11:05:32.796729+02:00"

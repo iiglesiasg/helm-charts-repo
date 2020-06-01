@@ -8,7 +8,7 @@ spec:
       containers:
       - name: load-generator
         image: peterevans/vegeta
-        command: [ "/bin/sh", "-c", "echo 'POST http://adapter-helm:8090/MONADTST/testhttp' | vegeta attack -rate=10 -duration=900s -body=${BODY} -header='Content-Type: application/json'| vegeta encode | tee results.bin | vegeta report " ]
+        command: [ "/bin/sh", "-c", "echo 'POST http://adapter-helm:8090/MONADTST/testhttp' | vegeta attack -rate=2 -duration=900s -body=${BODY} -header='Content-Type: application/json'| vegeta encode | tee results.bin | vegeta report " ]
         env:
           - name: BODY
             value: /usr/share/load-generator/body.json
