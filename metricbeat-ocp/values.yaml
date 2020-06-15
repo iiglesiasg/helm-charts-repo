@@ -143,16 +143,27 @@ deployment:
   metricbeatConfig:
     metricbeat.yml: |
       metricbeat.modules:
-      - module: kubernetes
-        enabled: true
+      - module: mongodb
+        hosts: ["mongodb://root:${MONGO_PASS}@bilbo-mongo-mongodb:27017"]
+      - module: coredns
         metricsets:
-          - state_node
-          - state_deployment
-          - state_replicaset
-          - state_pod
-          - state_container
+        - stats
         period: 10s
-        hosts: ["${KUBE_STATE_METRICS_HOSTS}"]
+        hosts: ["kube-dns.kube-system:53"]
+      - module: elasticsearch
+        metricsets:
+        - node
+        - node_stats
+        - index
+        - index_recovery
+        - index_summary
+        - shard
+        - ml_job
+        period: 10s
+        hosts: https://quickstart-es-http:9200
+        username: "elastic"
+        password: '${ELASTICSEARCH_PASS}'
+        ssl.certificate_authorities: ["/usr/share/metricbeat/config/elasticsearch-certs/tls.crt"]      
       output.elasticsearch:
         hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}'
         username: "elastic"
@@ -160,6 +171,13 @@ deployment:
         protocol: https
         ssl.certificate_authorities:
           - /usr/share/metricbeat/config/elasticsearch-certs/tls.crt
+      setup.kibana.host: quickstart-kb-http:5601
+      setup.kibana.protocol: "https"
+      setup.kibana.username: "elastic"
+      setup.kibana.password: '${ELASTICSEARCH_PASS}'
+      setup.kibana.ssl.enabled: true
+      setup.kibana.ssl.certificate_authorities: ["/usr/share/metricbeat/config/kibana-certs/tls.crt"]
+      setup.dashboards.enabled: true
   nodeSelector: {}
   # A list of secrets and their paths to mount inside the pod
   # This is useful for mounting certificates for security other sensitive values
@@ -180,7 +198,7 @@ deployment:
   tolerations: []
 
 # Replicas being used for the kube-state-metrics metricbeat deployment
-replicas: 0
+replicas: 1
 
 extraContainers: ""
 # - name: dummy-init
