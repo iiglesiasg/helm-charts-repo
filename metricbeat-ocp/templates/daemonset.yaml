@@ -48,7 +48,7 @@ spec:
       {{- if .Values.priorityClassName }}
       priorityClassName: {{ .Values.priorityClassName  }}
       {{- end }}
-      serviceAccountName: {{ template "metricbeat.serviceAccount" . }}
+      serviceAccountName: elastic-operator
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriod }}
       volumes:
       {{- range .Values.secretMounts | default .Values.daemonset.secretMounts }}
