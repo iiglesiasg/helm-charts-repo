@@ -4,7 +4,6 @@ metadata:
   labels:
     k8s-app: core-helm
   name: monitoringcore
-  namespace: default
 spec:
   selector:
     app: core-helm

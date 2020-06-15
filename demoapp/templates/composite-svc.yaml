@@ -4,7 +4,6 @@ metadata:
   labels:
     k8s-app: composite-helm
   name: monitoringcomposite
-  namespace: default
 spec:
   selector:
     app: composite-helm
