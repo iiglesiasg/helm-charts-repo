@@ -223,9 +223,9 @@ updateStrategy: RollingUpdate
 # of your pods to be unavailable during maintenance
 maxUnavailable: 1
 
-podSecurityContext:
-  fsGroup: 1000
-  runAsUser: 1000
+podSecurityContext: {}
+  #fsGroup: 1000
+  #runAsUser: 1000
 
 securityContext:
   capabilities:
