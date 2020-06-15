@@ -5,7 +5,6 @@ metadata:
     association.k8s.elastic.co/es-conf: '{"authSecretName":"quickstart-kibana-user","authSecretKey":"default-quickstart-kibana-user","caCertProvided":true,"caSecretName":"quickstart-kb-es-ca","url":"https://quickstart-es-http.default.svc:9200"}'
     common.k8s.elastic.co/controller-version: 1.0.1
   name: quickstart
-  namespace: default
 spec:
   count: 1
   elasticsearchRef:
